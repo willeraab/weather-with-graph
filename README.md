@@ -29,17 +29,17 @@ You can update this card using [custom updater](https://github.com/custom-compon
 # Example configuration.yaml entry
 custom_updater:
   card_urls:
-    - https://github.com/willeraab/weather-with-graph/blob/master/custom-updater.json
+    - https://raw.githubusercontent.com/willeraab/weather-with-graph/master/custom-updater.json
 ```
 
 #### Configuration variables:
 
-| Name    | Optional | Description                                                                                        |
-| ------- | -------- | -------------------------------------------------------------------------------------------------- |
-| type    | **No**   | Should be `'custom:weather-with-graph'`. |
-| weather | **No**   | An entity_id with the `weather` domain. |
-| title   | Yes      | Card title, defaults to friendly_name if no title is set. |
-| temp    | Yes      | Entity_id of the temperature sensor. Show temperature value from sensor instead. |
-| mode    | Yes      | Default value: `daily`. Set mode to `hourly` to display hours instead weekdays on the chart. |
-| number_of_forecasts | Yes | Number of forecast recordings to show, min 3 max 9. |
-| chart_only | Yes | Display the chart without displaying the header information. Boolean. |
+| Name                | Optional | Description                                                                                        |
+| ------------------- | -------- | -------------------------------------------------------------------------------------------------- |
+| type                | **No**   | Should be `'custom:weather-with-graph'`.                                                           |
+| weather             | **No**   | An entity_id with the `weather` domain.                                                            |
+| title               | Yes      | Card title, defaults to friendly_name if no title is set.                                          |
+| temp                | Yes      | Entity_id of the temperature sensor. Show temperature value from sensor instead.                   |
+| mode                | Yes      | Default value: `daily`. Set mode to `hourly` to display hours instead weekdays on the chart.       |
+| number_of_forecasts | Yes      | Number of forecast recordings to show, min 3 max 9.                                                |
+| chart_only          | Yes      | Display the chart without displaying the header information. Boolean.                              |
