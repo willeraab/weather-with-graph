@@ -6,31 +6,40 @@
 
 This repository was initially a fork of [a nice weather card](https://github.com/sgttrs/lovelace-weather-card-chart) that I wanted to tweak and adapt quite a lot. For various reasons I've turned this into its own project, but please do visit the original to see if it better suits your needs.
 
-## Configuration
+## Installation
 
-Copy `weather-with-graph.js` from this repository into your `config/www` directory first.
+### HACS - preferred method
 
-Add a reference to the copied file:
-```yaml
-# Example Lovelace UI config entry
-resources:
-- type: module
-  url: /local/weather-with-graph.js
+If you don't know about HACS (Home Assistant Community Store), you should [check it out](https://github.com/custom-components/hacs). It is by far the best current method of finding, installing and maintaining plugins. Presently this repository is not in HACS (I do plan to add it when I have time), but you can add this repository manually.
+
+1. In HASS, navigate to Community -> Settings.
+2. Add [this repository](https://github.com/willeraab/weather-with-graph) to the custom repositories, as a plugin.
+3. Navigate to Community -> Store.
+4. Find the `weather with graph` card in the plugins section. Install.
+5. In Lovelace UI config:
+```resources:
+ - url: /local/weather-with-graph.js
+   type: module
 ```
-Then you can add the card to the view:
-```yaml
-# Example Lovelace UI config entry
-  - type: 'custom:weather-with-graph'
-    title: Weather
-    weather: weather.openweathermap
+
+### Manual
+
+1. Copy [dist/weather-with-graph.js](https://raw.githubusercontent.com/willeraab/weather-with-graph/master/dist/weather-with-graph.js) into HASS `config/www` folder.
+2. In Lovelace UI config:
+```resources:
+ - url: /local/weather-with-graph.js
+   type: module
 ```
-You can update this card using [custom updater](https://github.com/custom-components/custom_updater). To do this, add these lines to `custom_updater` configuration in `configuration.yaml`:
-```yaml
-# Example configuration.yaml entry
-custom_updater:
-  card_urls:
-    - https://raw.githubusercontent.com/willeraab/weather-with-graph/master/custom-updater.json
+
+## Configuring the card
+
+### Minimal installation
+
+``` # Example Lovelace UI config entry
+ - type: 'custom:weather-with-graph'
+   weather: weather.openweathermap
 ```
+
 
 #### Configuration variables:
 

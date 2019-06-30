@@ -250,10 +250,10 @@ class WeatherWithGraph extends Polymer.Element {
     this.chartOnly = config.chart_only;
     this.numberOfForecasts = config.number_of_forecasts || 9;
     if (this.numberOfForecasts > 9) {
-    	this.numberOfForecasts = 9;
+      this.numberOfForecasts = 9;
     }
     if (this.numberOfForecasts < 3) {
-    	this.numberOfForecasts = 3;
+      this.numberOfForecasts = 3;
     }
     if (!config.weather) {
       throw new Error('Please define "weather" entity in the card config');
@@ -312,7 +312,7 @@ class WeatherWithGraph extends Polymer.Element {
 
   getWeatherState(condition)
   {
-  	return this._hass.localize('state.weather.' + condition) || condition;
+    return this._hass.localize('state.weather.' + condition) || condition;
   }
 
   getWindDirIcon(degree) {
@@ -435,9 +435,9 @@ class WeatherWithGraph extends Polymer.Element {
               autoSkip: true,
               fontColor: textColor,
               maxRotation: 0,
-              callback: function(value, index, values) {
+              callback: function(value) {
                 if (mode == 'hourly') {
-                	return new Date(value).toLocaleTimeString(locale, { hour: 'numeric', minute: 'numeric' });
+                  return new Date(value).toLocaleTimeString(locale, { hour: 'numeric', minute: 'numeric' });
                 }
                 return new Date(value).toLocaleDateString(locale, { weekday: 'short' });
               },
@@ -455,8 +455,8 @@ class WeatherWithGraph extends Polymer.Element {
             ticks: {
               display: true,
               fontColor: textColor,
-              callback: function(value, index, values) {
-              	return value + '°';
+              callback: function(value) {
+                return value + '°';
               }
             },
             afterFit: function(scaleInstance) {

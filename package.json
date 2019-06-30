@@ -1,0 +1,27 @@
+{
+  "name": "weather-with-graph",
+  "version": "0.2.0",
+  "description": "Weather card with charts.",
+  "main": "weather-with-graph.js",
+  "scripts": {
+    "build": "npm run lint && npm run terser",
+    "lint": "eslint ./source/** --fix-dry-run",
+    "terser": "terser ./source/weather-with-graph.js -o dist/weather-with-graph.js"
+  },
+  "pre-commit": [ "lint", "terser" ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willeraab/weather-with-graph.git"
+  },
+  "author": "Wilhelm Raab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/willeraab/weather-with-graph/issues"
+  },
+  "homepage": "https://github.com/willeraab/weather-with-graph#readme",
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "pre-commit": "^1.2.2",
+    "terser": "^4.0.1"
+  }
+}

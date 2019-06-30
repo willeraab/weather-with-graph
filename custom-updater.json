@@ -1,9 +1,0 @@
-{
-  "weather-with-graph": {
-    "updated_at": "2019-06-28",
-    "version": "0.1.0",
-    "remote_location": "https://raw.githubusercontent.com/willeraab/weather-with-graph/master/custom-chart-weather-card.js",
-    "visit_repo": "https://github.com/willeraab/weather-with-graph",
-    "changelog": "https://github.com/willeraab/weather-with-graph/releases/latest"
-  }
-}
