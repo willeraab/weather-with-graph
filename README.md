@@ -2,13 +2,13 @@
 
 ![Example from Stockholm/Sweden](https://user-images.githubusercontent.com/1109836/60332830-e6096e80-9997-11e9-9527-16b424e1984c.png)
 
-## About
+### About
 
 This repository was initially a fork of [a nice weather card](https://github.com/sgttrs/lovelace-weather-card-chart) that I wanted to tweak and adapt quite a lot. For various reasons I've turned this into its own project, but please do visit the original to see if it better suits your needs.
 
-## Installation
+### Installation
 
-### HACS - preferred method
+#### HACS - preferred method
 
 If you don't know about HACS (Home Assistant Community Store), you should [check it out](https://github.com/custom-components/hacs). It is by far the best current method of finding, installing and maintaining plugins. Presently this repository is not in HACS (I do plan to add it when I have time), but you can add this repository manually.
 
@@ -22,7 +22,7 @@ If you don't know about HACS (Home Assistant Community Store), you should [check
    type: module
 ```
 
-### Manual
+#### Manual
 
 1. Copy [dist/weather-with-graph.js](https://raw.githubusercontent.com/willeraab/weather-with-graph/master/dist/weather-with-graph.js) into HASS `config/www` folder.
 2. In Lovelace UI config:
@@ -31,17 +31,26 @@ If you don't know about HACS (Home Assistant Community Store), you should [check
    type: module
 ```
 
-## Configuring the card
+### Configuring the card
 
-### Minimal installation
+##### Minimal card settings
 
-``` # Example Lovelace UI config entry
+```
  - type: 'custom:weather-with-graph'
    weather: weather.openweathermap
 ```
 
+#### Separate temperature etc
+This card will display temperature not from the weather entity but from a separate temperature sensor.
+```
+ - type: 'custom:weather-with-graph'
+   weather: weather.openweathermap
+   temp: sensor.frontdoor_temperature
+   number_of_forecasts: 5
+```
 
-#### Configuration variables:
+
+### Configuration variables
 
 | Name                | Optional | Description                                                                                        |
 | ------------------- | -------- | -------------------------------------------------------------------------------------------------- |
