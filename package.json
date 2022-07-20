@@ -22,6 +22,6 @@
   "devDependencies": {
     "eslint": "^6.0.1",
     "pre-commit": "^1.2.2",
-    "terser": "^4.0.1"
+    "terser": "^4.8.1"
   }
 }
